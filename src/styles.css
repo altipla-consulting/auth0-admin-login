@@ -1,0 +1,12 @@
+
+.a0-throbber {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.a0-throbber svg {
+  font-size: 3.75rem;
+  line-height: 1;
+}
