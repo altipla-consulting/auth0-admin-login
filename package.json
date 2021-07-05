@@ -1,0 +1,40 @@
+{
+  "name": "@altipla/auth0-admin-login",
+  "description": "Admin login with Auth0.",
+  "version": "0.0.1",
+  "main": "./dist/auth0-admin-login.es.js",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "echo VITE_VERSION=$BUILD_ID > .env.production && NODE_ENV=production vite build && rm .env.production",
+    "lib": "echo VITE_VERSION=$BUILD_ID > .env.lib && NODE_ENV=production vite build --mode lib && rm .env.lib",
+    "lint": "eslint --ext .js,.vue 'src/**'",
+    "fix": "eslint --fix --ext .js,.vue src"
+  },
+  "dependencies": {
+    "@auth0/auth0-spa-js": "^1.15.0"
+  },
+  "peerDependencies": {
+    "@altipla-consulting/ui-v1": "^1.1.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "vue": "^3.0.6"
+  },
+  "devDependencies": {
+    "@altipla-consulting/ui-v1": "^1.1.0",
+    "@altipla/eslint-config-vue": "^0.2.6",
+    "@altipla/vite-config": "^0.2.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@tailwindcss/aspect-ratio": "^0.2.1",
+    "@tailwindcss/forms": "^0.3.3",
+    "@tailwindcss/typography": "^0.4.1",
+    "@vitejs/plugin-vue": "^1.2.3",
+    "@vue/compiler-sfc": "^3.0.11",
+    "eslint": "^7.27.0",
+    "eslint-plugin-vue": "^7.10.0",
+    "tailwindcss": "^2.1.4",
+    "vite": "^2.3.5"
+  },
+  "files": [
+    "dist"
+  ]
+}
