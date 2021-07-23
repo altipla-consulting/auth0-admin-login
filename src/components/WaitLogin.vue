@@ -1,9 +1,9 @@
 
 <template>
-  <div v-show="!loading">
+  <div v-if="!loading">
     <slot></slot>
   </div>
-  <div v-show="loading" class="a0-throbber">
+  <div v-if="loading" class="a0-throbber">
     <ac-icon duotone spin>spinner-third</ac-icon>
   </div>
 </template>
