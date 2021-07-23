@@ -1,7 +1,7 @@
 {
   "name": "@altipla/auth0-admin-login",
   "description": "Admin login with Auth0.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "./dist/auth0-admin-login.es.js",
   "type": "module",
   "scripts": {
