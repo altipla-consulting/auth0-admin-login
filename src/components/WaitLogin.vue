@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { loadedPromise } from '../auth.js'
+import { loadedPromise, bearerToken } from '../auth.js'
 
 
 export default {
@@ -23,7 +23,7 @@ export default {
 
   async mounted() {
     await loadedPromise
-    this.loading = false
+    this.loading = !bearerToken()
   },
 }
 </script>
