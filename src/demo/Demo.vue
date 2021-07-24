@@ -1,27 +1,27 @@
 
 <template>
-  <ac-wait-login>
-    <h1>Auth0 Admin Login</h1>
+  <h1>Auth0 Admin Login</h1>
 
-    <div>
-      <button @click="userInfo">userInfo</button>
-      <button @click="token">token</button>
-      <button @click="logout">logout</button>
-    </div>
-  </ac-wait-login>
+  <div>
+    <button @click="userinfo" style="margin-right: 15px">userinfo</button>
+    <button @click="token" style="margin-right: 15px">token</button>
+    <button @click="logout" style="margin-right: 15px">logout</button>
+  </div>
 </template>
 
-<script>
-import { userinfo, bearerToken, logout } from '../lib.js'
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+import { userinfo, bearerToken, logout } from '../lib'
 
 
-export default {
+export default defineComponent({
   methods: {
-    async userInfo() {
-      console.log(userinfo())
+    async userinfo() {
+      console.log(await userinfo())
     },
 
-    async token() {
+    token() {
       console.log(bearerToken())
     },
 
@@ -29,5 +29,5 @@ export default {
       await logout()
     },
   },
-}
+})
 </script>

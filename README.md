@@ -7,5 +7,5 @@ Admin login with Auth0.
 ## Install
 
 ```sh
-npm i @altipla-consulting/auth0-admin-login
+npm i @altipla/auth0-admin-login
 ```

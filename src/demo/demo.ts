@@ -2,7 +2,7 @@
 import { createApp } from 'vue'
 
 import Demo from './Demo.vue'
-import Auth0AdminLogin from '../lib.js'
+import Auth0AdminLogin from '../lib'
 
 
 let app = createApp(Demo)
