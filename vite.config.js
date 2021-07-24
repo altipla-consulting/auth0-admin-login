@@ -1,15 +1,16 @@
 
+import * as path from 'path'
+
 import { extendLibConfig } from '@altipla/vite-config'
 
 
 export default extendLibConfig({
   build: {
+    lib: {
+      entry: path.resolve(process.cwd(), 'src', 'lib.ts'),
+    },
     rollupOptions: {
-      external: [
-        'vue',
-        '@fortawesome/fontawesome-svg-core',
-        '@altipla-consulting/ui-v1',
-      ],
+      external: ['vue'],
     },
   },
 })
