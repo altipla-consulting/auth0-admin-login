@@ -9,6 +9,7 @@ export let load: Promise<Client>
 export interface PluginOptions {
   domain: string
   clientId: string
+  audience: string
 }
 
 export function startAuth(options: PluginOptions) {
@@ -36,6 +37,7 @@ async function loadClient(options: PluginOptions): Promise<Client> {
   let client = await createAuth0Client({
     domain: options.domain,
     client_id: options.clientId,
+    audience: options.audience,
     redirect_uri: u.toString(),
   })
 
