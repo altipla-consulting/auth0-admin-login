@@ -1,17 +1,23 @@
 
 import { createApp } from 'vue'
+import Hermes from '@altipla/hermes'
 
 import Demo from './Demo.vue'
-import Auth0AdminLogin from '../lib'
+import DemoLayout from './DemoLayout.vue'
+import { Authenticator } from '../lib'
 
 
-let app = createApp(Demo)
+let app = createApp(DemoLayout)
 
-app.use(Auth0AdminLogin, {
+let auth = new Authenticator({
   domain: 'lavoz.eu.auth0.com',
-  clientId: 'Pl3EJAR6xvtiA6WBjDfxlgAbvqFC04NM',
-  redirectUri: 'https://localhost:3000/accounts/login',
+  clientId: 'E1ygFQnOktNc5DqDzgyUIQzaAllIhORk',
   audience: 'https://glider.lavozdealmeria.com/',
 })
+app.use(Hermes, auth.configureHermes({
+  routes: [
+    { path: '/', component: Demo },
+  ],
+}))
 
 app.mount('#app')

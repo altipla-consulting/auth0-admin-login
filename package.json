@@ -3,11 +3,12 @@
   "description": "Admin login with Auth0.",
   "version": "1.0.2",
   "main": "./dist/auth0-admin-login.es.js",
+  "types": "./dist/lib.d.ts",
   "type": "module",
   "scripts": {
     "start": "vite",
     "build": "echo VITE_VERSION=$BUILD_ID > .env.production && NODE_ENV=production vite build && rm .env.production",
-    "lib": "echo VITE_VERSION=$BUILD_ID > .env.lib && NODE_ENV=production vite build --mode lib && rm .env.lib",
+    "lib": "echo VITE_VERSION=$BUILD_ID > .env.lib && NODE_ENV=production vite build --mode lib && rm .env.lib && npx tsc --emitDeclarationOnly --declaration --esModuleInterop --outDir dist",
     "lint": "vue-tsc --noEmit && eslint --ext .js,.vue src",
     "fix": "eslint --fix --ext .js,.vue src"
   },
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "@altipla/eslint-config-vue": "^0.2.6",
+    "@altipla/hermes": "^2.1.4",
     "@altipla/vite-config": "^0.2.3",
     "@vitejs/plugin-vue": "^1.2.3",
     "@vue/compiler-sfc": "^3.0.11",
