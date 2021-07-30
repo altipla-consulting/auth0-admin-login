@@ -1,5 +1,4 @@
 
-import { App } from 'vue'
 import { PluginOptions as HermesPluginOptions } from '@altipla/hermes'
 
 import { startAuth, initClient, Configuration } from './auth'
